@@ -10,7 +10,7 @@ def generate_tree(n, used_labels = None):
     if n == 1:
         label = 'seq1'  # Ensuring that the trees always have at least one shared sequence.
         while label in used_labels:
-            label = 'seq' + str(random.randint(2, 2000))  # Drawing sequences from a pool of 2000 sequences.
+            label = 'seq' + str(random.randint(2, 1000))  # Drawing sequences from a pool of 1000 sequences.
         used_labels.add(label)  # Keeping track of used labels to ensure that sequences in the tree are unique.
         return TreeNode(label = label)
 
@@ -33,3 +33,5 @@ def write_newick(tree, filename):
     newick = tree_to_newick(tree) + ';'
     with open(filename, 'w') as file:
         file.write(newick)
+
+        
