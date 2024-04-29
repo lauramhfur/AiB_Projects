@@ -1,7 +1,7 @@
 import numpy as np
 import copy
 
-def compute_N(S: list, DM: dict):
+def compute_N(S, DM):
     N = copy.deepcopy(DM)
 
     dij = {seq_i: DM[seq_i] for seq_i in DM.keys()}
